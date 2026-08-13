@@ -326,7 +326,7 @@ function statusRisk(status) {
 const app = document.getElementById("app");
 const topNav = document.getElementById("top-nav");
 
-function goRoute(route) { location.hash = "#/" + route; }
+function goRoute(route) { const h = "#/" + route; if (location.hash === h) render(); else location.hash = h; }
 
 function render() {
   const route = (location.hash.replace(/^#\/?/, "") || "dashboard").split("/")[0];
